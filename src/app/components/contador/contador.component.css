@@ -1,0 +1,16 @@
+.title{
+    font-size: 18 px;
+    color: rgb(247, 6, 6);
+    font-weight: bold;
+    text-decoration: underline;
+    overflow: hidden;
+    
+}
+.buttonincre{
+    padding: 8px;
+    margin: 8px;
+    border-radius: 2em;
+    border-color:  8px solid,rgb(91, 151, 241);
+    height: 9;
+
+}

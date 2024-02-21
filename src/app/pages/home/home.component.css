@@ -1,0 +1,14 @@
+.nombre{
+    font-size: 25px;
+    color: yellowgreen;
+    font-weight: 100;
+    margin-top: 5px;
+    font-family: cursive;
+
+}
+.butonmodal{
+    color: rgb(0, 0, 53);
+    background-color: rgb(129, 180, 214);
+    font-size: 25px;
+
+}

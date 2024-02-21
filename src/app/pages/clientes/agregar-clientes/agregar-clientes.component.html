@@ -1,0 +1,54 @@
+<div class="formulario-container">
+ <form [formGroup]="clienteForm" (submit)="crearCliente()">
+   <label for="id">Id:</label>
+   <input
+    type="number"
+    formControlName="id"
+    placeholder="ID"
+  />
+
+  <label for="Nombre">Nombre:</label>
+  <input type="text" formControlName="nombre" placeholder="nombre" />
+
+  <label for="direccion">Dirección:</label>
+  <input
+    type="text"
+    formControlName="direccion"
+    placeholder="direccion"
+  />
+  <label for="telefono">Telefono:</label>
+  <input
+    type="text"
+    formControlName="telefono"
+    placeholder="telefono"
+    
+  />
+
+  <label for="email">Email:</label>
+  <input
+    type="email"
+    formControlName="email"
+    placeholder="email"
+  />
+
+  <label for="Nombre">Tipo de Documento:</label>
+  <input
+    type="text"
+    formControlName="tipoDocumento"
+    placeholder="tipo de documento"
+  />
+  <label for="numeroDocumento">Numero de Documento:</label>
+  <input
+    type="text"
+    formControlName="numeroDocumento"
+    placeholder=" Numero Documento"
+  />
+  <label for="numeroDocumento">Estado:</label>
+  <input type="checkbox" id="cbox2" value="second_checkbox" />
+
+   <button type="submit" (click)="crearCliente()">Crear Cliente </button>
+ </form>
+</div>
+
+ 
+

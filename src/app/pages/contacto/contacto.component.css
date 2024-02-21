@@ -1,0 +1,14 @@
+.formulario {
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #04ad75;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+  
+    margin-left: auto;
+    margin-right: auto;
+    /* Se ajusta verticalmente */
+    margin-top: 50px; /* Ajusta este valor según sea necesario */
+    margin-bottom: 50px; /* Ajusta este valor según sea necesario */
+}
+  

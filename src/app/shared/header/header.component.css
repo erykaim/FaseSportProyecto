@@ -1,0 +1,31 @@
+.main-header{
+    background-color: rgb(91, 175, 126);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo img{
+    max-width: 20%;
+    height: auto;
+
+}
+.navbar ul{
+    list-style: none;
+    margin:5;
+    padding: 5;
+    display: flex;
+
+}
+.navbar ul li a {
+    margin-right: 10px;
+    color: rgb(249, 252, 251);
+    text-decoration: none;
+    font-family:cursive
+
+}
+.logo-name {
+    font-family: cursive;
+    align-items: center; /* Centra verticalmente los elementos */
+}
+

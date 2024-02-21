@@ -1,0 +1,29 @@
+<div class="formulario">
+    <h2>CONTACTENOS  </h2>
+    <h3>formulario de contacto</h3>
+    
+    <form [formGroup]= "contactoForm"(submit)="eviarContacto()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" formControlName="nombre" ><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" ><br><br>
+
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" formControlName="mensaje" rows="4" cols="50"></textarea><br><br>
+
+        <button type="submit">enviar </button>
+       <!--<textarea
+         id="mensaje"
+         formControlName= "mensaje" 
+         rows="4"
+         placeholder="HTML"
+        >
+        </textarea>-->
+    </form>
+    <p>Nombre:{{contactoForm.value.nombre}}</p>
+    <p>Email:{{contactoForm.value.email}}</p>
+    <p>Mensaje:{{contactoForm.value.mensaje}}</p>
+
+
+</div>
