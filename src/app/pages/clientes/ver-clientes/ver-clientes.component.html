@@ -1,3 +1,5 @@
+<!-- agrgar los permisos para que muestre si el usuario  login es admin-->
+<ng-template class="container m-4 p-3 "[appPermisos]="['ADMIN']">
 <div class="container m-4 p-3">
  <table class="table table-striped">
     <thead>
@@ -17,7 +19,7 @@
   <tbody>
     @for (cliente of misClientes; track $index){<!--hacer for para llamar los datos de la tabala-->
      <tr>
-        <td>{{cliente.id}}</td>
+        <td>{{cliente._id}}</td>
         <td>{{cliente.nombre}}</td>
         <td>{{cliente.direccion}}</td>
         <td>{{cliente.telefono}}</td>
@@ -27,7 +29,7 @@
         <td>{{cliente.estado}}</td>
         <td>
           <a class="btn btn-info"> Editar</a>
-          <a class="btn btn-Dange" (click)="eliminarCliente (cliente.id)"> Eliminar</a>
+          <a class="btn btn-Dange" (click)="eliminarCliente (cliente._id)"> Eliminar</a>
           <a class="btn btn-warning "> Actualizar</a>
         </td>
      </tr>
@@ -35,10 +37,10 @@
    </tbody>
  </table>
 </div>
-<a class="btn btn-warning  " (click)= "showagregarclientes()">crear cliente </a>
-@if(mostrar){
+<a class="btn btn-warning  " (click)= "agregarclientes()">crear cliente </a>
+<!--@if(mostrar){
   <app-agregar-clientes (clienteCreado)="onClienteCreado($event)"></app-agregar-clientes>
 
-}
-
+}-->
+</ng-template >
   

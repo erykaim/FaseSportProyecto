@@ -1,0 +1,43 @@
+<body>
+<div class= "container"> 
+<form [formGroup] = "loginForm" (submit)="realizoLogin()">
+  <h3 class="iniciarse">  Iniciar Sesion </h3>
+  <div class="login-form">
+ 
+  <div >
+    <label for="login" class="form-label">Correo electronico</label>
+    <input type="email" class="form-control"  formControlName ="login" placeholder = "Ingrese su correo">
+    
+    @if (login?.invalid && login?.touched){
+    
+    <div>
+        <small class = "text-danger"> El correo es obligatorio</small>
+    </div>
+    }
+  </div>
+
+  <div >
+    <label for="password" class="form-label">Contrasena</label>
+    <input type="password" class="form-control" formControlName ="password" placeholder = "Ingrese su contrasena" >
+    
+    @if (password?.invalid && password?.touched){
+    <div>
+        <small class = "text-danger"> la contrasena es obligatoria</small>
+    </div>
+    @if (password?.hasError('minlength')){
+        <small class = "text-danger">El password no cumple con la longitud minima"5"</small>
+    } }
+  </div>
+  
+  <div >
+    <div class = 'form-group float-end'>
+        <a href = '' class = "small"> Olvido su contrasena?</a>
+    </div>
+  
+  
+  <button type="submit" class="btn btn-primary">Iniciar</button>
+  </div>
+  </div>
+</form>
+</div>
+</body>

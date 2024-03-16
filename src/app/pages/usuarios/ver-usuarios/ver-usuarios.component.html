@@ -1,0 +1,34 @@
+<p>ver-usuarios works!</p>
+ <table class="table table-striped">
+    <thead>
+    <tr>
+       
+        <th>nombre</th>
+        <th>email</th>
+        <th>tipoDocumento</th>
+        <th>numeroDocumento</th>
+        <th>rol</th>
+        <th>estado</th>
+        <th>Acciones</th>
+    </tr>
+   
+  </thead>
+  <tbody>
+    @for (usuario of usuarios; track $index){<!--hacer for para llamar los datos de la tabala-->
+     <tr>
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.email}}</td>
+        <td>{{usuario.tipoDocumento}}</td>
+        <td>{{usuario.numeroDocumento}}</td>
+        <td>{{usuario.rol}}</td>
+        <td>{{usuario.estado}}</td>
+        
+        <td>
+          <a class="btn btn-info"> Editar</a>
+          <a class="btn btn-Dange" (click)="eliminarUsuario (usuario._id)"> Eliminar</a>
+          <a class="btn btn-warning "> Actualizar</a>
+        </td>
+     </tr>
+    }
+   </tbody>
+ </table>

@@ -1,12 +1,6 @@
 <div class="formulario-container">
+  <h1 class="text-center"> Crear Clientes</h1>
  <form [formGroup]="clienteForm" (submit)="crearCliente()">
-   <label for="id">Id:</label>
-   <input
-    type="number"
-    formControlName="id"
-    placeholder="ID"
-  />
-
   <label for="Nombre">Nombre:</label>
   <input type="text" formControlName="nombre" placeholder="nombre" />
 
@@ -18,7 +12,7 @@
   />
   <label for="telefono">Telefono:</label>
   <input
-    type="text"
+    type="number"
     formControlName="telefono"
     placeholder="telefono"
     
@@ -43,10 +37,13 @@
     formControlName="numeroDocumento"
     placeholder=" Numero Documento"
   />
-  <label for="numeroDocumento">Estado:</label>
-  <input type="checkbox" id="cbox2" value="second_checkbox" />
+  
+   <button type="submit" >Crear Cliente </button>
+   
+   <button type="submit" >
+     <a  routerLink="./../clientes"> Cancelar</a> <!--invocar las rutas-->
+   </button>
 
-   <button type="submit" (click)="crearCliente()">Crear Cliente </button>
  </form>
 </div>
 
