@@ -35,10 +35,10 @@ export class AutenticacionService {
           tipoDocumento,
           numeroDocumento,
           login,
-          password,
           rol,
           estado,
           createdAt,
+          password,
 
         }= resp.usuario;
         
@@ -49,10 +49,10 @@ export class AutenticacionService {
           tipoDocumento,
           numeroDocumento,
           login,
-          password,
           rol,
           estado,
           createdAt,
+          password,
         );
         localStorage.setItem('token',resp.token);
         return true;     
@@ -77,7 +77,7 @@ export class AutenticacionService {
   ///cierre de sesion
   logout(){
     localStorage.removeItem('token');
-    this.router.navigateByUrl('login');
+    this.router.navigateByUrl('auten/login');
 
     
   }

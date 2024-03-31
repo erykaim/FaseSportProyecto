@@ -1,0 +1,47 @@
+.formulario-container {
+    max-width: 800px; /* Establece el ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 20px; /* Agrega relleno al contenedor */
+    background-color: #f9f9f9; /* Color de fondo */
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  }
+  
+  
+  /* Estilos para los campos de entrada dentro del formulario */
+  
+  .formulario-container input  label{
+    width: 80px; /* Ajusta el ancho de los campos de entrada */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #a03737;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    display: inline-block; /* Muestra los campos de entrada en línea */
+}
+
+  
+  
+  
+  
+  /* Estilos para las etiquetas dentro del formulario */
+  .formulario-container label {
+    margin-bottom: 10px; /* Espacio entre cada label */
+    font-weight: bold;
+  }
+  
+  /* Estilos para el botón dentro del formulario */
+  .formulario-container button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .formulario-container button:hover {
+    background-color: #b33300;
+  }

@@ -1,3 +1,5 @@
+import { publishFacade } from "@angular/compiler";
+
 export class UsuarioModel {
      
     constructor(
@@ -5,12 +7,12 @@ export class UsuarioModel {
         public nombre: string,
         public email:string,
         public tipoDocumento:string,
-        public numeroDocumento: number,
+        public numeroDocumento: string,
         public login: string,
-        public password: string,
         public rol:string,
-        public estado: boolean,
-        public createdAt: Date
+        public estado?: boolean,
+        public createdAt?: Date,
+        public password?: string,
 
     ) { }
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { enviromment } from '../../../enviroments/envrroment';
 import { HttpClient } from '@angular/common/http';
 import { UsuarioModel } from '../../core/models/usuarioModel';
+import { UsuarioInterface } from '../../core/interfaces/usuarios';
 const base_url = enviromment.base_url;
 
 @Injectable({
@@ -26,11 +27,14 @@ export class UsuariosService {
   getUsuarios(){
     return this.httpClient.get(`${base_url}/usuario`,this.headers) //en las peticiones se agregan los headers
   }
+  getUnUsuario(id:string){
+    return this.httpClient.get(`${base_url}/usuario/${id}`,this.headers) //en las peticiones se agregan los headers
+  }
 
-  crearUsuarios(usuario: UsuarioModel){
+  crearUsuarios(usuario: UsuarioInterface){
     return this.httpClient.post(`${base_url}/usuario`,usuario,this.headers)
   }
-  //TODO completar 
+  //TODO completar  actualizar 
   actualizarUsuarios(usuario: UsuarioModel){
     return this.httpClient.put(
       `${base_url}/usuario/${usuario._id}`,

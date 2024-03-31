@@ -1,1 +1,52 @@
 <p>agregar-usuarios works!</p>
+<div class="formulario-container">
+  <h1 class="text-center"> Crear usuarios</h1>
+  
+ <form [formGroup]="usuariosForm" (submit)="crearUsuario()">
+
+  <label for="Nombre">Nombre:</label>
+  <input type="text" formControlName="nombre" placeholder="nombre" />
+
+    <label for="email">Email:</label>
+    <input
+        type="email"
+        formControlName="email"
+        placeholder="email"
+    />
+  
+    <label for="tipodocumento">Tipo de Documento:</label>
+    <input
+        type="text"
+        formControlName="tipoDocumento"
+        placeholder="tipo de documento"
+    />
+  <label for="numeroDocumento">Numero de Documento:</label>
+  <input
+    type="text"
+    formControlName="numeroDocumento"
+    placeholder=" Numero Documento"
+  />
+  <label for="login">confirmacion correo</label>
+  <input
+    type="email"
+    formControlName="login"
+    placeholder="cofirmacion correo"
+  />
+  <label for="password">Contrasena</label>
+  <input
+    type="text"
+    formControlName="password"
+    placeholder="contrasena"
+  />
+  
+   <button type="submit" >Crear Usuario </button>
+   
+   <button type="submit" >
+     <a  routerLink="./../usuarios"> Cancelar</a> <!--invocar las rutas-->
+   </button>
+
+ </form>
+</div>
+
+ 
+

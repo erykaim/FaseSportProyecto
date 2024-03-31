@@ -60,7 +60,7 @@ export const routes: Routes = [
                 component: VerUsuariosComponent,
             },
             {
-                path: "agregar-usuarios",
+                path: "agregar-usuarios/:id",
                 title: "agregar usuarios",
                 component: AgregarUsuariosComponent,
             },

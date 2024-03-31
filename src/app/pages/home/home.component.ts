@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PersonaComponent } from '../persona/persona.component';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -7,7 +6,7 @@ import Swal from 'sweetalert2';
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  imports:[PersonaComponent],
+  imports:[],
 })
 export class HomeComponent implements OnInit { //oinit es una funcion de angular
   nombre: string = "" //realizamos una variuable
