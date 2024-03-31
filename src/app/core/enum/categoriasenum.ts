@@ -1,0 +1,6 @@
+export enum CATEGORIAS{
+    ARREGLOS = 'ARREGLOS',
+    UNIFORMES = 'UNIFORMES',
+    BORDADOS = 'BORDADOS',
+    
+}

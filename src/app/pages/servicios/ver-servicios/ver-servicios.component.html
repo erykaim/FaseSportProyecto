@@ -1,0 +1,61 @@
+<body>
+  <div class="container">
+    <h2>Nuestros Servicios</h2>
+    <div class="d-flex justify-content-end">
+      <a class="btn btn-warning  " (click)= "agregarServicio()">Crear servicio</a>
+    
+     <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Buscar" >
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+    </div> 
+    <hr>
+    <div class = "table-resposive"> 
+      <table class="table table-striped table-hover ">
+        <thead >
+          <tr class=" table-primary color">
+            
+            <th>Nombre</th>
+            <th>descripcion</th>
+            <th>precio</th>
+            <th>categoria</th>
+            <th>Acciones</th>
+            <th>Estado</th>
+            <th>Usario creador</th>
+            <th>Acciones</th>
+          </tr>
+        
+        </thead>
+        <tbody>
+          @for (servicio of servicios; track $index){<!--hacer for para llamar los datos de la tabala-->
+          <tr>
+              <td>{{servicio.nombre}}</td>
+              <td>{{servicio.descripcion}}</td>
+              <td>{{servicio.precio}}</td>
+              <td>{{servicio.categoria}}</td>
+               <td><!--ngmodel llamo la columna acciones-->
+                <select class="form-control" 
+                [(ngModel)]="servicio.acciones"
+                (change)="actualizarRol(servicio)"
+                >
+                @for (accion of acciones; track $index){
+                  <option [value]="acciones">{{accion}}</option>
+                }
+                </select>
+              </td>
+              
+              <td>{{servicio.estado}}</td>
+              <td>{{servicio.usuario}}</td>
+
+              <td>
+                <a class="btn btn-info" (click)="editarServicio(servicio._id)"> Editar</a>
+                <a class="btn btn-outline-danger" (click)="eliminarServicio(servicio._id)"> Eliminar</a>
+                <!--<a class="btn btn-warning "> Actualizar</a>-->
+              </td>
+          </tr>
+          }
+        </tbody>
+    </table>
+    </div>
+  </div>
+</body>

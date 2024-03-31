@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { loginInterface } from '../../core/interfaces/loginInterface';
 import { HttpClient } from '@angular/common/http';
 import { enviromment } from '../../../enviroments/envrroment';
-import { Observable, catchError, map, of, tap } from 'rxjs';
+import { Observable, catchError, map, of, tap, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { UsuarioModel } from '../../core/models/usuarioModel';
 
@@ -81,4 +81,23 @@ export class AutenticacionService {
 
     
   }
+
+  ///////////////////////////////////////////////////////////olvido
+  olvidoContrasena(login: string, numeroDocumento: string) {
+    const body = { login, numeroDocumento };
+    return this.httpClient.post(`${base_url}/auten/olvidoContrasena`, body).pipe(
+      tap((resp: any) => {
+        localStorage.setItem('token', resp.token);
+        // Aquí podrías emitir un evento o notificar al componente de éxito
+      }),
+      catchError((error) => {
+        //  manejas los errores y devuelves un mensaje de error al componente
+        let errorMessage = 'Ocurrió un error al intentar recuperar la contraseña.';
+        if (error.error && error.error.msg) {
+          errorMessage = error.error.msg;
+        }
+        return throwError(errorMessage);
+      })
+    );
+    }
 }

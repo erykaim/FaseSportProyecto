@@ -1,0 +1,27 @@
+
+.formulario-container {
+    max-width: 700px; /* Ancho máximo del contenedor del formulario */
+    margin: 10px auto; /* Centrar el formulario horizontalmente y agregar margen superior */
+    background-color: #e2f5eac9; /* Color de fondo del contenedor */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    height: 720px; /* Altura deseada del contenedor */
+  
+    padding: 40px; /* Agrega un espacio alrededor del contenedor */
+  
+  }
+  .text-center{
+    color:hwb(143 3% 41%);
+  }
+  
+  .form-label {
+    font-weight: bold; /*letra*/
+  }
+  
+  .form-control {
+    width: 400px;/*label&*/
+    height: 40px; /* Reducir la altura del campo de entrada */
+    font-size: 15px; /* Ajustar el tamaño de fuente del campo de entrada */
+    margin-bottom: 20px; /* Agregar margen inferior para separar los campos */
+  }
+  

@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ClientesService } from '../../../services/clientes/clientes.service';
 import { UsuariosService } from '../../../services/usuarios/usuarios.service';
 import { UsuarioModel } from '../../../core/models/usuarioModel';
 import { VerUsuariosComponent } from '../ver-usuarios/ver-usuarios.component';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { UsuarioInterface } from '../../../core/interfaces/usuarios';
 import Swal from 'sweetalert2';
+import { config } from '../../../../enviroments/configuracion/config';
+
 
 @Component({
   selector: 'app-agregar-usuarios',
@@ -17,6 +18,8 @@ import Swal from 'sweetalert2';
 })
 export class AgregarUsuariosComponent implements OnInit {
   usuarioSeleccionado: UsuarioModel;
+  roles = config.roles;
+  
   //creado como variable
   usuariosForm = new FormGroup({
     nombre: new FormControl('', Validators.required),

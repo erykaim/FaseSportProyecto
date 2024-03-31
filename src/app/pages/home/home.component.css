@@ -206,3 +206,44 @@ section {
     padding-bottom: 20px;
     margin-top: 80px;
 }
+/*css de contactanos------------->*/
+
+.container-contac {
+    /* Estilos para el contenedor de contacto */
+    padding: 20px; /* Agrega un espacio alrededor del contenedor */
+    background-color: #f9f9f9; /* Color de fondo */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  
+    /* Alinea el contenedor al centro */
+    margin:  auto;
+    max-width: 700px; /* Ancho máximo */
+   
+
+}
+  
+.row{
+    box-shadow: #0056b3;
+}
+.col-md-7{
+    padding: 10px;
+}
+
+.form-label {
+    font-size: 14px; /* Ajusta el tamaño de fuente del label */
+}
+
+.form-control {
+    width: 500px;
+    height: 40px; /* Reducir la altura del campo de entrada */
+    font-size: 14px; /* Ajustar el tamaño de fuente del campo de entrada */
+    margin-bottom: 20px; /* Agregar margen inferior para separar los campos */
+}
+ .col-md-5 {
+    margin: auto;    
+}
+ .h4{
+   color:  hwb(143 1% 22%);
+}
+
+  

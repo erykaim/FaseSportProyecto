@@ -1,51 +1,50 @@
-<div class="formulario-container">
-  <h1 class="text-center"> Crear Clientes</h1>
- <form [formGroup]="clienteForm" (submit)="crearCliente()">
-  <label for="Nombre">Nombre:</label>
-  <input type="text" formControlName="nombre" placeholder="nombre" />
+<body>
+  <div class="formulario-container">
+    <h1 class="text-center"> Crear Clientes</h1>
 
-  <label for="direccion">Dirección:</label>
-  <input
-    type="text"
-    formControlName="direccion"
-    placeholder="direccion"
-  />
-  <label for="telefono">Telefono:</label>
-  <input
-    type="number"
-    formControlName="telefono"
-    placeholder="telefono"
-    
-  />
+    <form [formGroup]="clienteForm" (submit)="crearCliente()">
+      <div class = "row">
+        <div clas = "col-md-5">
+          <div class="mb-3">
+            <label for="Nombre" class="form-label">Nombre:</label>
+            <input type="text" formControlName="nombre" class="form-control" placeholder="nombre" />
+          </div>
+          
+          <div class="mb-3">
+            <label for="direccion" class="form-label">Dirección:</label> 
+            <input type="text"formControlName="direccion"class="form-control" placeholder="direccion"/>
+          </div>
+          
 
-  <label for="email">Email:</label>
-  <input
-    type="email"
-    formControlName="email"
-    placeholder="email"
-  />
+          <div class="mb-3">
+            <label for="telefono" class="form-label">Telefono:</label>
+            <input type="number"formControlName="telefono"class="form-control" placeholder="telefono"/>
+          </div>
 
-  <label for="Nombre">Tipo de Documento:</label>
-  <input
-    type="text"
-    formControlName="tipoDocumento"
-    placeholder="tipo de documento"
-  />
-  <label for="numeroDocumento">Numero de Documento:</label>
-  <input
-    type="text"
-    formControlName="numeroDocumento"
-    placeholder=" Numero Documento"
-  />
-  
-   <button type="submit" >Crear Cliente </button>
-   
-   <button type="submit" >
-     <a  routerLink="./../clientes"> Cancelar</a> <!--invocar las rutas-->
-   </button>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" formControlName="email" class="form-control" placeholder="email"/>
+          </div>
+          <div class="mb-3">
+            <label for="Nombre" class="form-label">Tipo de Documento:</label>
+            <input type="text" formControlName="tipoDocumento"class="form-control"  placeholder="tipo de documento"/>
+          </div>
 
- </form>
-</div>
-
+          <div class="mb-3">
+            <label for="numeroDocumento" class="form-label">Numero de Documento:</label>
+            <input type="text"formControlName="numeroDocumento"class="form-control" placeholder=" Numero Documento"/>
+          </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary "style="margin-right: 10px;" >Crear Cliente </button>
+      
+          <button type="button"  class="btn btn-danger ">
+            <a  routerLink="../../clientes" style="text-decoration: none; color: white;"> Cancelar</a> <!--invocar las rutas-->
+          </button>
+        </div>
+    </div>
+    </div>
+    </form>
+  </div>
+</body>
  
 

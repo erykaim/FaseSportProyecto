@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { ServiciosComponent } from './pages/servicios/servicios.component';
+//import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { VerClientesComponent } from './pages/clientes/ver-clientes/ver-clientes.component';
@@ -9,6 +9,9 @@ import { AutenticacionComponent } from './login/autenticacion/autenticacion.comp
 import { autenGuard } from './guards/auten/auten.guard';
 import { VerUsuariosComponent } from './pages/usuarios/ver-usuarios/ver-usuarios.component';
 import { AgregarUsuariosComponent } from './pages/usuarios/agregar-usuarios/agregar-usuarios.component';
+import { VerServiciosComponent } from './pages/servicios/ver-servicios/ver-servicios.component';
+import { AgregarServiciosComponent } from './pages/servicios/agregar-servicios/agregar-servicios.component';
+import { OlvidocontrasenaComponent } from './login/olvidocontrasena/olvidocontrasena.component';
 
 export const routes: Routes = [
     //esta es una ruta hija
@@ -17,7 +20,7 @@ export const routes: Routes = [
         title: "autenticacion",
         children: [
             { path: "login", component: AutenticacionComponent },
-            // {path:"Item/id",component:""},  esta se puede hacer con cambio de contrasena
+            {path:"Item/id",component:OlvidocontrasenaComponent},  //esta se puede hacer con cambio de contrasena
         ],
 
     },
@@ -31,7 +34,16 @@ export const routes: Routes = [
         children: [
             //path por defecto del padre
             { path: "", title: "Inicio", component: HomeComponent },
-            { path: "servicio", title: "Servicios", component: ServiciosComponent },
+
+            { path: "servicios",
+             title: "Servicios",
+             component: VerServiciosComponent 
+            },
+            { path: "agregar-servicios/:id",
+              title:"agregar Servicios",
+              component: AgregarServiciosComponent
+
+            },
 
 
             {
@@ -50,7 +62,7 @@ export const routes: Routes = [
                 component: VerClientesComponent,
             },
             {
-                path: "add-clientes",
+                path: "add-clientes/:id",
                 title: "crear Clientes",
                 component: AgregarClientesComponent,
             },

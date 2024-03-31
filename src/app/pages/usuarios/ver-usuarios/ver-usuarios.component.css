@@ -1,0 +1,33 @@
+
+.container {
+    margin-top: 5px; /* Ajusta el margen superior */
+}
+.container h2{
+    margin-top: 20px;
+    font-size: 32px; 
+    font-weight: bold;
+    color: hwb(143 3% 43%); /* Color del título */;
+}
+
+  
+.table {
+    background-color: #f9f9f9; /* Color de fondo de la tabla */
+}
+  
+.btn {
+    margin-right: 10px; /* Ajusta el margen derecho de los botones */
+}
+.form-control {
+    height: 30px; /* Reducir la altura del input */
+    font-size: 14px; /* Reducir el tamaño de la fuente */
+    max-width: 150px; /* Definir un ancho máximo */
+}
+.color th{
+    font-size:18px; 
+    color:#14683a;
+   
+}
+
+  
+  
+  

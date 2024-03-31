@@ -6,7 +6,8 @@ export enum ROUTER_APP {
     CONTACTO = 'Inicio/contacto',
     CLIENTES = 'Inicio/clientes',
     ADD_CLIENTES = 'Inicio/add-clientes',
-    SERVICIOS = 'Inicio/servicio',
+    SERVICIOS = 'Inicio/servicios',
+    AGREGAR_SERVICIOS = 'Inicio/agregar-servicios',
     USUARIOS = 'Inicio/usuarios',
     AGREGAR_USUARIOS = "Inicio/agregar-usuarios"
 }

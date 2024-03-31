@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { enviromment } from '../../../enviroments/envrroment';
 import { HttpClient } from '@angular/common/http';
-import { Cliente } from '../../core/interfaces/cliente';
+import { ClienteInterface } from '../../core/interfaces/cliente';
 import { ClienteModel } from '../../core/models/clienteModel';
+import { Observable } from 'rxjs';
 
 //variable global 
 const base_url = enviromment.base_url;
@@ -29,12 +30,25 @@ export class ClientesService {
       },
     };
   }
-
+  
   getClientes(){
     return this.httpClient.get(`${base_url}/cliente`,this.headers) //en las peticiones se agregan los headers
   }
+  getUnCliente(id:string){
+    return this.httpClient.get(`${base_url}/cliente/${id}`,this.headers) //en las peticiones se agregan los headers
+  }
 
-  crearClientes(cliente: ClienteModel){
+  crearClientes(cliente: ClienteInterface){
     return this.httpClient.post(`${base_url}/cliente`,cliente,this.headers)
+  }
+
+  actualizarClientes(cliente:ClienteModel){
+    return this.httpClient.put(
+      `${base_url}/cliente/${cliente._id}`,
+      cliente,
+      this.headers)
+  }
+  eliminarClientes(id:string){
+    return this.httpClient.delete(`${base_url}/cliente/${id}`,this.headers)
   }
 }

@@ -1,46 +1,60 @@
-<p>ver-usuarios works!</p>
- <table class="table table-striped">
-    <thead>
-    <tr>
-       
-        <th>nombre</th>
-        <th>email</th>
-        <th>tipoDocumento</th>
-        <th>numeroDocumento</th>
-        <th>rol</th>
-        <th>estado</th>
-        <th>Acciones</th>
-    </tr>
-   
-  </thead>
-  <tbody>
-    @for (usuario of usuarios; track $index){<!--hacer for para llamar los datos de la tabala-->
-     <tr>
-        <td>{{usuario.nombre}}</td>
-        <td>{{usuario.email}}</td>
-        <td>{{usuario.tipoDocumento}}</td>
-        <td>{{usuario.numeroDocumento}}</td>
-        <!--config para opcionar listado de roles-->
-        <td>
-          <select class="form-control" 
-          [(ngModel)]="usuario.rol"
-          (change)="actualizarRol(usuario)"
-          >
-          @for (rol of roles; track $index){
-            <option [value]="rol">{{rol}}</option>
-          }
-          
-          </select>
-        </td>
-        <td>{{usuario.estado}}</td>
+<body>
+  <div class="container">
+    <h2>Nuestros Usarios</h2>
+    <div class="d-flex justify-content-end">
+      <a class="btn btn-warning  " (click)= "agregarUsuarios()">Crear usuario</a>
+    
+     <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Buscar" >
+        <button class="btn btn-outline-success" type="submit" >Buscar</button>
+      </form>
+    </div> 
+    <hr>
+    <div class = "table-resposive"> 
+      <table class="table table-striped table-hover ">
+        <thead >
+          <tr class="table-primary color">
+            
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>TipoDocumento</th>
+            <th>NumeroDocumento</th>
+            <th>Rol</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
         
-        <td>
-          <a class="btn btn-info" (click)="editarUsuarios(usuario._id)"> Editar</a>
-          <a class="btn btn-Dange" (click)="eliminarUsuario (usuario._id)"> Eliminar</a>
-          <!--<a class="btn btn-warning "> Actualizar</a>-->
-        </td>
-     </tr>
-    }
-   </tbody>
- </table>
- <a class="btn btn-warning  " (click)= "agregarUsuarios()">crear usuario</a>
+        </thead>
+        <tbody>
+          @for (usuario of usuarios; track $index){<!--hacer for para llamar los datos de la tabala-->
+          <tr>
+              <td>{{usuario.nombre}}</td>
+              <td>{{usuario.email}}</td>
+              <td>{{usuario.tipoDocumento}}</td>
+              <td>{{usuario.numeroDocumento}}</td>
+              <!--config para opcionar listado de roles-->
+              <td>
+                <select class="form-control" 
+                [(ngModel)]="usuario.rol"
+                (change)="actualizarRol(usuario)"
+                >
+                @for (rol of roles; track $index){
+                  <option [value]="rol">{{rol}}</option>
+                }
+                
+                </select>
+              </td>
+              <td>{{usuario.estado}}</td>
+              
+              <td>
+                <a class="btn btn-info" (click)="editarUsuarios(usuario._id)"> Editar</a>
+                <a class="btn btn-outline-danger" (click)="eliminarUsuario (usuario._id)"> Eliminar</a>
+                <!--<a class="btn btn-warning "> Actualizar</a>-->
+              </td>
+          </tr>
+          }
+        </tbody>
+    </table>
+    </div>
+  </div>
+</body>

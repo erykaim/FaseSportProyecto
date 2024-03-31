@@ -1,47 +1,26 @@
+
 .formulario-container {
-    max-width: 800px; /* Establece el ancho máximo del contenedor */
-    margin: 0 auto; /* Centra el contenedor en la página */
-    padding: 20px; /* Agrega relleno al contenedor */
-    background-color: #f9f9f9; /* Color de fondo */
-    border-radius: 10px; /* Borde redondeado */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
-  }
-  
-  
-  /* Estilos para los campos de entrada dentro del formulario */
-  
-  .formulario-container input  label{
-    width: 80px; /* Ajusta el ancho de los campos de entrada */
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #a03737;
-    border-radius: 5px;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
-    display: inline-block; /* Muestra los campos de entrada en línea */
+  max-width: 700px; /* Ancho máximo del contenedor del formulario */
+  margin: 10px auto; /* Centrar el formulario horizontalmente y agregar margen superior */
+  background-color: #e2f5eac9; /* Color de fondo del contenedor */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  height: 720px; /* Altura deseada del contenedor */
+
+  padding: 40px; /* Agrega un espacio alrededor del contenedor */
+
+}
+.text-center{
+  color:hwb(143 3% 41%);
 }
 
-  
-  
-  
-  
-  /* Estilos para las etiquetas dentro del formulario */
-  .formulario-container label {
-    margin-bottom: 10px; /* Espacio entre cada label */
-    font-weight: bold;
-  }
-  
-  /* Estilos para el botón dentro del formulario */
-  .formulario-container button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .formulario-container button:hover {
-    background-color: #b33300;
-  }
+.form-label {
+  font-weight: bold; /*letra*/
+}
+
+.form-control {
+  width: 400px;/*label&*/
+  height: 40px; /* Reducir la altura del campo de entrada */
+  font-size: 15px; /* Ajustar el tamaño de fuente del campo de entrada */
+  margin-bottom: 20px; /* Agregar margen inferior para separar los campos */
+}

@@ -1,46 +1,62 @@
-<!-- agrgar los permisos para que muestre si el usuario  login es admin-->
-<ng-template class="container m-4 p-3 "[appPermisos]="['ADMIN']">
-<div class="container m-4 p-3">
- <table class="table table-striped">
-    <thead>
-    <tr>
-        <th>id </th>
-        <th>nombre</th>
-        <th>direccion</th>
-        <th>telefono</th>
-        <th>email</th>
-        <th>tipoDocumento</th>
-        <th>numeroDocumento</th>
-        <th>estado</th>
-        <th>Acciones</th>
-    </tr>
-   
-  </thead>
-  <tbody>
-    @for (cliente of misClientes; track $index){<!--hacer for para llamar los datos de la tabala-->
-     <tr>
-        <td>{{cliente._id}}</td>
-        <td>{{cliente.nombre}}</td>
-        <td>{{cliente.direccion}}</td>
-        <td>{{cliente.telefono}}</td>
-        <td>{{cliente.email}}</td>
-        <td>{{cliente.tipoDocumento}}</td>
-        <td>{{cliente.numeroDocumento}}</td>
-        <td>{{cliente.estado}}</td>
-        <td>
-          <a class="btn btn-info"> Editar</a>
-          <a class="btn btn-Dange" (click)="eliminarCliente (cliente._id)"> Eliminar</a>
-          <a class="btn btn-warning "> Actualizar</a>
-        </td>
-     </tr>
-    }
-   </tbody>
- </table>
-</div>
-<a class="btn btn-warning  " (click)= "agregarclientes()">agregar cliente </a>
-<!--@if(mostrar){
-  <app-agregar-clientes (clienteCreado)="onClienteCreado($event)"></app-agregar-clientes>
 
-}-->
-</ng-template >
+<div class="container">
+    <h2>Nuestros Clientes</h2>
+    <ng-template class="container m-4 p-3 "[appPermisos]="['ADMIN']">
+    <div class="d-flex justify-content-end">
+       <a class="btn btn-warning  " (click)= "agregarClientes()">agregar cliente </a>
+
+    
+     <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Buscar" >
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+    </div> 
+    <hr>
+
+<!-- agrgar los permisos para que muestre si el usuario  login es admin-->
+    
+  <div class = "table-resposive"> 
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr class=" table-primary color" >
+           
+            <th>nombre</th>
+            <th>direccion</th>
+            <th>telefono</th>
+            <th>email</th>
+            <th>tipoDocumento</th>
+            <th>numeroDocumento</th>
+            <th>estado</th>
+            <th>Acciones</th>
+        </tr>
+      
+      </thead>
+      <tbody>
+        @for (cliente of cliente; track $index){<!--hacer for para llamar los datos de la tabala-->
+        <tr>
+            <td>{{cliente.nombre}}</td>
+            <td>{{cliente.direccion}}</td>
+            <td>{{cliente.telefono}}</td>
+            <td>{{cliente.email}}</td>
+            <td>{{cliente.tipoDocumento}}</td>
+            <td>{{cliente.numeroDocumento}}</td>
+            <td>{{cliente.estado}}</td>
+
+            
+            <td>
+              <a class="btn btn-info" (click)="editarClientes(cliente._id)"> Editar</a>
+              <a class="btn btn-outline-danger" (click)="eliminarCliente(cliente._id)"> Eliminar</a>
+            </td>
+        </tr>
+        }
+      </tbody>
+    </table>
   
+  
+   
+    
+</div>
+    
+  </ng-template >
+
+      

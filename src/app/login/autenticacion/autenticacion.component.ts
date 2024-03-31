@@ -15,6 +15,7 @@ import { ROUTER_APP } from '../../core/enum/routers-appenum';
 })
 export class AutenticacionComponent implements OnInit {
   loginForm!: FormGroup;
+ // loginSeleccionado:loginInterface;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -58,7 +59,7 @@ export class AutenticacionComponent implements OnInit {
           Swal.fire({
             html: `Bienvenido ${nombre}`,
           }).then(() => {
-            this.router.navigateByUrl(ROUTER_APP.CLIENTES);
+            this.router.navigateByUrl(ROUTER_APP.INICIO);
 
           });
         }

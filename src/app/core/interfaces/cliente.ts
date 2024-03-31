@@ -1,10 +1,10 @@
-export interface Cliente {
-    _id: number;
+export interface ClienteInterface {
     nombre: string;
     direccion:string;
     telefono:number;
     email:string;
     tipoDocumento:String;
     numeroDocumento:string;
-    estado:boolean;
+   // estado:boolean;
+    //rol:string;
 }

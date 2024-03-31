@@ -1,52 +1,58 @@
-<p>agregar-usuarios works!</p>
-<div class="formulario-container">
-  <h1 class="text-center"> Crear usuarios</h1>
-  
- <form [formGroup]="usuariosForm" (submit)="crearUsuario()">
+<body>
+  <div class="formulario-container">
+    <h1 class="text-center"> Crear usuarios</h1>
+    
+    <form [formGroup]="usuariosForm" (submit)="crearUsuario()">
+      <div class = "row">
+        <div clas = "col-md-5">
+          <div class="mb-3">
+            <label for="Nombre" class="form-label">Nombre:</label>
+            <input type="text" formControlName="nombre"class="form-control"   placeholder="nombre" required/>
+          </div>
 
-  <label for="Nombre">Nombre:</label>
-  <input type="text" formControlName="nombre" placeholder="nombre" />
+          <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" formControlName="email" class="form-control"  placeholder="email"/>
+          </div>
 
-    <label for="email">Email:</label>
-    <input
-        type="email"
-        formControlName="email"
-        placeholder="email"
-    />
-  
-    <label for="tipodocumento">Tipo de Documento:</label>
-    <input
-        type="text"
-        formControlName="tipoDocumento"
-        placeholder="tipo de documento"
-    />
-  <label for="numeroDocumento">Numero de Documento:</label>
-  <input
-    type="text"
-    formControlName="numeroDocumento"
-    placeholder=" Numero Documento"
-  />
-  <label for="login">confirmacion correo</label>
-  <input
-    type="email"
-    formControlName="login"
-    placeholder="cofirmacion correo"
-  />
-  <label for="password">Contrasena</label>
-  <input
-    type="text"
-    formControlName="password"
-    placeholder="contrasena"
-  />
-  
-   <button type="submit" >Crear Usuario </button>
-   
-   <button type="submit" >
-     <a  routerLink="./../usuarios"> Cancelar</a> <!--invocar las rutas-->
-   </button>
+          <div class="mb-3">
+            <label for="tipodocumento" class="form-label">Tipo de Documento:</label>
+            <input type="text" formControlName="tipoDocumento"class="form-control"  placeholder="tipo de documento"/>
+          </div>
 
- </form>
-</div>
+          <div class="mb-3">
+            <label for="numeroDocumento" class="form-label">Numero de Documento:</label>
+            <input type="number" formControlName="numeroDocumento"class="form-control"   placeholder=" Numero Documento"/>
+          </div>
 
- 
+          <div class="mb-3">
+            <label for="login" class="form-label">confirmacion correo</label>
+            <input type="email" formControlName="login"class="form-control"   placeholder="cofirmacion correo"/>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Contrasena</label>
+            <input type="password" formControlName="password"class="form-control"   placeholder="contrasena" />
+          </div>
+
+          <div class="mb-3">
+            <label for="rol" class="form-label">Rol</label>
+            <select class="form-control" formControlName="rol" required>
+              @for (rol of roles; track $index) {
+              <option [value]="rol">{{ rol }}</option>
+              }
+            </select>
+          </div>
+
+      
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary "style="margin-right: 10px;" >Crear Usuario </button>
+      
+          <a routerLink="../../usuarios" class="btn btn-danger" style="text-decoration: none; color: white;">Cancelar</a>
+        </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body> 
 

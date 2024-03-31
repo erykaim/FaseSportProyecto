@@ -13,21 +13,27 @@
 }
 .navbar ul{
     list-style: none;
-    margin:5;
-    padding: 5;
+    margin:5px;
+    padding: 5px;
     display: flex;
+    
 
 }
+.navbar li {
+    margin-right: 20px;
+  }
 .navbar ul li a {
-    margin-right: 10px;
+    margin-right: 5px;
     color: rgb(249, 252, 251);
     text-decoration:double;
-    font-family:cursive
+    font-weight:600;
+    
 
 }
 .logo-name {
-    font-family: cursive;
     align-items: center; /* Centra verticalmente los elementos */
+    font-weight: bold;
+    font-size: 20px; 
 }
 .cerrarsesion-btn {
   background-color: #dc3545;
@@ -37,7 +43,7 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 15px;
-  font-family:cursive
+  font-weight:600;
 }
 
 .cerrarsesion-btn:hover {
