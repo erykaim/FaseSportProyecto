@@ -1,11 +1,11 @@
-<body>
-  <div class="container">
+
+  <div class="container mb-5">
     <h2>Nuestros Servicios</h2>
     <div class="d-flex justify-content-end">
       <a class="btn btn-warning  " (click)= "agregarServicio()">Crear servicio</a>
     
      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Buscar" >
+        <input class="form-control me-2" type="search" placeholder="Buscar" [(ngModel)]="filterText" name="filtro" >
         <button class="btn btn-outline-success" type="submit">Buscar</button>
       </form>
     </div> 
@@ -21,17 +21,17 @@
             <th>categoria</th>
             <th>Acciones</th>
             <th>Estado</th>
-            <th>Usario creador</th>
+            <th>Usuario creador</th>
             <th>Acciones</th>
           </tr>
         
         </thead>
         <tbody>
-          @for (servicio of servicios; track $index){<!--hacer for para llamar los datos de la tabala-->
+          @for (servicio of filteredData | paginate: { itemsPerPage: 5, currentPage: p }; track $index){<!--hacer for para llamar los datos de la tabala-->
           <tr>
               <td>{{servicio.nombre}}</td>
               <td>{{servicio.descripcion}}</td>
-              <td>{{servicio.precio}}</td>
+              <td>{{servicio.precio  | currency}}</td>
               <td>{{servicio.categoria}}</td>
                <td><!--ngmodel llamo la columna acciones-->
                 <select class="form-control" 
@@ -39,13 +39,13 @@
                 (change)="actualizarRol(servicio)"
                 >
                 @for (accion of acciones; track $index){
-                  <option [value]="acciones">{{accion}}</option>
+                  <option [value]="accion">{{accion}}</option>
                 }
                 </select>
               </td>
               
               <td>{{servicio.estado}}</td>
-              <td>{{servicio.usuario}}</td>
+              <td>{{servicio.usuario?.nombre}}</td>
 
               <td>
                 <a class="btn btn-info" (click)="editarServicio(servicio._id)"> Editar</a>
@@ -57,5 +57,6 @@
         </tbody>
     </table>
     </div>
+    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior"nextLabel="Siguiente"></pagination-controls>
   </div>
-</body>
+

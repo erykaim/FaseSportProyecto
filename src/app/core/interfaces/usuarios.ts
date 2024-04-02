@@ -10,3 +10,8 @@ export interface UsuarioInterface {
         
     
 }
+export interface UsuarioCreadorInterface{
+    nombre: string;
+    email:string;
+    numeroDocumento:string;
+}

@@ -1,4 +1,5 @@
 import { publishFacade } from "@angular/compiler";
+import { UsuarioCreadorInterface } from "../interfaces/usuarios";
 
 export class servicioModel {
      
@@ -9,7 +10,7 @@ export class servicioModel {
         public precio:number,
         public categoria: string,
         public acciones:string,
-        public usuario?: string,
+        public usuario?: UsuarioCreadorInterface,
         public estado?: boolean,
         public createdAt?: Date,
 
