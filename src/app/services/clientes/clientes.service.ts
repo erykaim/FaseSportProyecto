@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { enviromment } from '../../../enviroments/envrroment';
 import { HttpClient } from '@angular/common/http';
 import { ClienteInterface } from '../../core/interfaces/cliente';
 import { ClienteModel } from '../../core/models/clienteModel';
 import { Observable } from 'rxjs';
+import { environment } from '../../../enviroments/envrroment';
 
 //variable global 
-const base_url = enviromment.base_url;
+const base_url = environment.base_url;
 
 
 

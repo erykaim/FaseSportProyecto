@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { enviromment } from '../../../enviroments/envrroment';
 import { servicioModel } from '../../core/models/servicioModel';
 import { servicioInterface } from '../../core/interfaces/servicioInterface';
-const base_url = enviromment.base_url;
+import { environment } from '../../../enviroments/envrroment';
+const base_url = environment.base_url;
 
 @Injectable({
   providedIn: 'root'

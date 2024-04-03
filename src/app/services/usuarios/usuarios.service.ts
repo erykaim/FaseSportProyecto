@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { enviromment } from '../../../enviroments/envrroment';
 import { HttpClient } from '@angular/common/http';
 import { UsuarioModel } from '../../core/models/usuarioModel';
 import { UsuarioInterface } from '../../core/interfaces/usuarios';
-const base_url = enviromment.base_url;
+import { environment } from '../../../enviroments/envrroment';
+const base_url = environment.base_url;
 
 @Injectable({
   providedIn: 'root'
