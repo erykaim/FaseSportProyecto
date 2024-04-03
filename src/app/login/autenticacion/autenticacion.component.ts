@@ -66,6 +66,23 @@ export class AutenticacionComponent implements OnInit {
       },
       error: (error: any)=> {
         console.error(error.error.msg);
+        //console.error(error.error.msg);
+        if (error && error.error && error.error.msg === 'las credenciales password no son validas') {
+          // Muestra una alerta si la contraseña es incorrecta
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'La contraseña ingresada es incorrecta',
+          });
+        }
+        if (error && error.error && error.error.msg === 'las credenciales correono son validas') {
+          // Muestra una alerta si la contraseña es incorrecta
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'el correo ingresado es incorrecto',
+          });
+        }
       },
     });
   }
