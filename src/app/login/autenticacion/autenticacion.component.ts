@@ -75,14 +75,6 @@ export class AutenticacionComponent implements OnInit {
             text: 'La contraseña ingresada es incorrecta',
           });
         }
-        if (error && error.error && error.error.msg === 'las credenciales correono son validas') {
-          // Muestra una alerta si la contraseña es incorrecta
-          Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'el correo ingresado es incorrecto',
-          });
-        }
       },
     });
   }
