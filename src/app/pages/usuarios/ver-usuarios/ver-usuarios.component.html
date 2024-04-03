@@ -1,11 +1,11 @@
-<body>
+
   <div class="container">
     <h2>Nuestros Usarios</h2>
     <div class="d-flex justify-content-end">
       <a class="btn btn-warning  " (click)= "agregarUsuarios()">Crear usuario</a>
     
      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Buscar" >
+        <input class="form-control me-2" type="search" placeholder="Buscar"  [(ngModel)]="filterText" name="filtro">
         <button class="btn btn-outline-success" type="submit" >Buscar</button>
       </form>
     </div> 
@@ -26,7 +26,8 @@
         
         </thead>
         <tbody>
-          @for (usuario of usuarios; track $index){<!--hacer for para llamar los datos de la tabala-->
+
+          @for (usuario of filteredData | paginate: { itemsPerPage: 5, currentPage: pagi }; track $index){<!--hacer for para llamar los datos de la tabala-->
           <tr>
               <td>{{usuario.nombre}}</td>
               <td>{{usuario.email}}</td>
@@ -56,5 +57,7 @@
         </tbody>
     </table>
     </div>
+     <pagination-controls (pageChange)="pagi = $event" previousLabel="Anterior"nextLabel="Siguiente"></pagination-controls>
+
   </div>
-</body>
+

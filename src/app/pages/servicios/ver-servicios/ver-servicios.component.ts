@@ -125,7 +125,7 @@ export class VerServiciosComponent implements OnInit, OnDestroy {
           //servicio.precio.indexOf(filterTerm) !== -1 ||
           servicio.precio.toString().indexOf(filterTerm) !== -1
       );
+    }
   }
-}
 
 }

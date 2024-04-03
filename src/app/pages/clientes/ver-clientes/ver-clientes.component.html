@@ -7,7 +7,7 @@
 
     
      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Buscar" >
+        <input class="form-control me-2" type="search" placeholder="Buscar"[(ngModel)]="filterText" name="filtro" >
         <button class="btn btn-outline-success" type="submit">Buscar</button>
       </form>
     </div> 
@@ -31,8 +31,8 @@
         </tr>
       
       </thead>
-      <tbody>
-        @for (cliente of cliente; track $index){<!--hacer for para llamar los datos de la tabala-->
+      <tbody> 
+        @for (cliente of filteredData | paginate: { itemsPerPage: 5, currentPage: pagi }; track $index){<!--hacer for para llamar los datos de la tabala-->
         <tr>
             <td>{{cliente.nombre}}</td>
             <td>{{cliente.direccion}}</td>
@@ -52,7 +52,8 @@
       </tbody>
     </table>
   
-  
+  <pagination-controls (pageChange)="pagi = $event" previousLabel="Anterior"nextLabel="Siguiente"></pagination-controls>
+
    
     
 </div>

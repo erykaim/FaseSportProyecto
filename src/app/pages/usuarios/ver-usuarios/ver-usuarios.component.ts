@@ -6,15 +6,17 @@ import Swal from 'sweetalert2';
 import { AutenticacionService } from '../../../services/login/autenticacion.service';
 import { ROLES } from '../../../core/enum/rolesenum';
 import { config } from '../../../../enviroments/configuracion/config';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
 import { ROUTER_APP } from '../../../core/enum/routers-appenum';
+import { CommonModule } from '@angular/common';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-ver-usuarios',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule, NgxPaginationModule, ReactiveFormsModule],
   templateUrl: './ver-usuarios.component.html',
   styleUrl: './ver-usuarios.component.css'
 })
@@ -25,6 +27,22 @@ export class VerUsuariosComponent implements OnInit, OnDestroy {
   usuarioLogin: UsuarioModel;
   //llamar mi archivo config de los roles
   roles = config.roles;
+  pagi: number = 1;
+  searchTerm: string = '';
+  filteredData: UsuarioModel[] = [];
+  filtrarTexto: string = '';
+
+  get filterText() {
+    return this.filtrarTexto;
+  }
+
+  set filterText(value: string) {
+    this.filtrarTexto = value;
+    this.filteredData = this.filterUsuarios(value);
+
+    //this.pagina = 1;
+  }
+
 
   constructor(
     private usuariosService: UsuariosService,
@@ -48,9 +66,10 @@ export class VerUsuariosComponent implements OnInit, OnDestroy {
       .getUsuarios()
       .subscribe((resp: any) => {
         this.usuarios = resp.usuarios;
+        this.filteredData = this.usuarios;
       });
   }
-  
+
   eliminarUsuario(id: string) {
 
     Swal.fire({
@@ -93,5 +112,21 @@ export class VerUsuariosComponent implements OnInit, OnDestroy {
   editarUsuarios(id: string) {
     this.router.navigateByUrl(`${ROUTER_APP.AGREGAR_USUARIOS}/${id}`);
   }
-
+  //filtrar los users
+  filterUsuarios(filterTerm: string): UsuarioModel[] {
+    filterTerm = filterTerm.toLocaleLowerCase();
+    console.log('filtros', filterTerm)
+    if (this.usuarios.length.toString() === '0' || this.filterText === '') {
+      return this.usuarios;
+    } else {
+      return this.usuarios.filter(
+        (usuario: UsuarioModel) =>
+          usuario.nombre.toLocaleLowerCase().indexOf(filterTerm) !== -1 ||
+          usuario.email.toLocaleLowerCase().indexOf(filterTerm) !== -1 ||
+          usuario.tipoDocumento.toLocaleLowerCase().indexOf(filterTerm) !== -1 ||
+          usuario.numeroDocumento.toLocaleLowerCase().indexOf(filterTerm) !== -1 ||
+          usuario.login.toLocaleLowerCase().indexOf(filterTerm) !== -1 
+      );
+    }
+  }
 }
