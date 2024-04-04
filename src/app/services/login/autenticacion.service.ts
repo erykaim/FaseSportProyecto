@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, map, of, tap, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { UsuarioModel } from '../../core/models/usuarioModel';
-import { environment } from '../../../enviroments/envrroment';
+import { environment } from '../../../enviroments/environment';
 
 const base_url = environment.base_url;
 @Injectable({
