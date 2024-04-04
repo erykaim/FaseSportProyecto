@@ -5,13 +5,13 @@ import { UsuarioModel } from '../../../core/models/usuarioModel';
 import Swal from 'sweetalert2';
 import { AutenticacionService } from '../../../services/login/autenticacion.service';
 import { ROLES } from '../../../core/enum/rolesenum';
-import { config } from '../../../../enviroments/configuracion/config';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
 import { ROUTER_APP } from '../../../core/enum/routers-appenum';
 import { CommonModule } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { config } from '../../../../environments/configuracion/config';
 
 @Component({
   selector: 'app-ver-usuarios',

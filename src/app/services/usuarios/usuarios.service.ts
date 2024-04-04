@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UsuarioModel } from '../../core/models/usuarioModel';
 import { UsuarioInterface } from '../../core/interfaces/usuarios';
-import { environment } from '../../../enviroments/environment';
+import { environment } from '../../../environments/environment';
 const base_url = environment.base_url;
 
 @Injectable({

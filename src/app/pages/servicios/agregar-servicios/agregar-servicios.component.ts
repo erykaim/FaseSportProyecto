@@ -6,8 +6,8 @@ import { servicioModel } from '../../../core/models/servicioModel';
 import { ServiciosService } from '../../../services/servicios/servicios.service';
 import { servicioInterface } from '../../../core/interfaces/servicioInterface';
 import Swal from 'sweetalert2';
-import { config } from '../../../../enviroments/configuracion/categorias'
-import { configAccion } from '../../../../enviroments/configuracion/acciones'
+import { config } from '../../../../environments/configuracion/categorias';
+import { configAccion } from '../../../../environments/configuracion/acciones';
 
 
 

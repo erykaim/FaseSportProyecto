@@ -6,7 +6,7 @@ import { VerUsuariosComponent } from '../ver-usuarios/ver-usuarios.component';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { UsuarioInterface } from '../../../core/interfaces/usuarios';
 import Swal from 'sweetalert2';
-import { config } from '../../../../enviroments/configuracion/config';
+import { config } from '../../../../environments/configuracion/config';
 
 
 @Component({

@@ -2,13 +2,13 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { servicioModel } from '../../../core/models/servicioModel';
-import {  configAccion } from '../../../../enviroments/configuracion/acciones';
 import { ServiciosService } from '../../../services/servicios/servicios.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { ROUTER_APP } from '../../../core/enum/routers-appenum';
 import { CommonModule } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { configAccion } from '../../../../environments/configuracion/acciones';
 
 @Component({
   selector: 'app-ver-servicios',

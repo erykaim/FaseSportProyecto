@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ClienteInterface } from '../../core/interfaces/cliente';
 import { ClienteModel } from '../../core/models/clienteModel';
 import { Observable } from 'rxjs';
-import { environment } from '../../../enviroments/environment';
+import { environment } from '../../../environments/environment';
 
 //variable global 
 const base_url = environment.base_url;
